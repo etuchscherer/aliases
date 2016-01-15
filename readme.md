@@ -1,5 +1,5 @@
 # Aliases
-A collection of aliases I use.
+A collection of aliases I frequent.
 
 ## Installation
 
