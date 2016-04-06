@@ -1,53 +1,75 @@
 # Aliases
-A collection of aliases I frequent.
+-A collection of aliases I frequent.
+-
+-## Installation
+-
+-Add this to your `~/.zshrc` and profit.
+-
+-    # include aliases
+-    [[ -f ~/.aliases ]] && source ~/.aliases
 
-## Installation
+# Unix
+alias ll="ls -al"
+alias ln="ln -v"
+alias mkdir="mkdir -p"
+alias e="$EDITOR"
+alias v="$VISUAL"
+alias src="source ~/.zshrc"
 
-Add this to your `~/.zshrc` and profit.
+#Redis
+alias sr="redis-server /usr/local/etc/redis.conf"
 
-    # include aliases
-    [[ -f ~/.aliases ]] && source ~/.aliases
+# Classmates siteui specific
+alias llk="cd $HOME/links && roots watch"
+# TU / TOMCAT UP - is now a script running in /usr/local/bin
+# alias tu="$CATALINA_HOME/bin/startup.sh && open http://localhost:8080"
+alias tl="tail -f $CATALINA_HOME/logs/catalina.out"
+alias td="$CATALINA_HOME/bin/shutdown.sh"
+alias tbounce="td && tu"
+alias t-reset="kt && cd ~/Sites/siteui/ && git pull && mvn clean install && cp ~/Sites/siteui/target/siteui*.war $CATALINA_HOME/webapps/siteui.war"
+alias natom="cd $HOME/Sites/siteuicli && atom ."
+alias nn="cd $HOME/Sites/siteuicli"
+alias nnn="cd $HOME/Sites/siteuicli && ember build --w"
+alias ppp="cd $HOME/Sites/siteuicli && ember build -p -w"
+alias patom="cd ~/$HOME/Sites/site-node-api && atom ."
+alias vv="cd $HOME/Sites/site-node-api"
+alias vvv="refresh_node_api"
+alias cc="cd /usr/local/etc/site-config"
+alias qanode="i2cssh -F -2 --cluster=qanode"
 
-## Aliases
-### Unix
-    ll="ls -al"
-    ln="ln -v"
-    mkdir="mkdir -p"
-    e="$EDITOR"
-    v="$VISUAL"
-    src="source ~/.zshrc"
+# Ember
+alias ember-api="cd ~/Ember/website && bundle exec middleman"
+alias ember-guides="cd ~/Ember/guides && bundle exec middleman"
+alias cli-docs="cd ~/Ember/cli-docs && jekyll serve"
+alias middleman="open http://etuchscherermac.local:4567"
 
-### Redis
-    sr="redis-server /usr/local/etc/redis.conf"
+# Git
+alias g="git status"
+alias gs="git status"
+alias gg="git checkout"
+alias gb="git branch"
+alias gl="git whatchanged"
+alias gd="git difftool -y"
+alias gm="git mergetool -y"
 
-### SITEUI specific
-    llk="cd $HOME/links && roots watch"
-    st="$HOME/apache-tomcat-6.0.44/bin/startup.sh && open http://localhost:8080"
-    kt="$HOME/apache-tomcat-6.0.44/bin/shutdown.sh"
-    nn="cd $HOME/Sites/siteuicli"
-    nnn="cd $HOME/Sites/siteuicli && ember build --w"
-    vv="cd $HOME/Sites/site-node-api"
-    vvv="cd $HOME/Sites/site-node-api && node run-eslint.js -s"
-    cc="cd /usr/local/etc/site-config"
+# Bundler
+alias b="bundle"
 
-### Git
-    g="git status"
-    gs="git status"
-    gg="git checkout"
-    gb="git branch"
-    gl="git whatchanged"
-    gd="git difftool -y"
-    gm="git mergetool -y"
+# Rails
+alias migrate="rake db:migrate db:rollback && rake db:migrate"
+alias s="rspec"
 
-### Bundler
-    b="bundle"
+# Node
+alias nombom="rm -rf node_modules bower_components && npm cache clean && bower cache clean && npm install && bower install" 
+alias npmbom="nombom"
 
-### Rails
-    migrate="rake db:migrate db:rollback && rake db:migrate"
-    s="rspec"
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
 
-### Node
-    nombom="rm -rf node_modules bower_components && npm cache clean && bower cache clean && npm install && bower install" 
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
 
-### Pretty print the path
-    path='echo $PATH | tr -s ":" "\n"'
+# ssh
+alias qa09='ssh HOME-APP01.QA09.SEA1.CMATES.COM'
+alias node01='ssh nodejs01.qa09.sea1.cmates.com'
+alias node02='ssh nodejs02.qa09.sea1.cmates.com'
