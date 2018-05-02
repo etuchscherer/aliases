@@ -1,25 +1,33 @@
 # Aliases
--A collection of aliases I frequent.
--
--## Installation
--
--Add this to your `~/.zshrc` and profit.
--
--    # include aliases
--    [[ -f ~/.aliases ]] && source ~/.aliases
 
+A collection of aliases I frequently use. 
+
+## Installation
+
+```
+# add this to .bashrc, or .zshrc
+[[ -f ~/.aliases ]] && source ~/.aliases.local
+```
+
+```
 # Unix
+#---------------------------------------
+
+# Long list [ll]
 alias ll="ls -al"
 alias ln="ln -v"
+# always make the directory -p is for chumps
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
-alias src="source ~/.zshrc"
 
 #Redis
+#---------------------------------------
+# Start Redis [sr]
 alias sr="redis-server /usr/local/etc/redis.conf"
 
 # Classmates siteui specific
+#---------------------------------------
 alias llk="cd $HOME/links && roots watch"
 # TU / TOMCAT UP - is now a script running in /usr/local/bin
 # alias tu="$CATALINA_HOME/bin/startup.sh && open http://localhost:8080"
@@ -37,19 +45,21 @@ alias vvv="refresh_node_api"
 alias cc="cd /usr/local/etc/site-config"
 alias qanode="i2cssh -F -2 --cluster=qanode"
 
-# Ember
+# Local Ember Docs
+#---------------------------------------
 alias ember-api="cd ~/Ember/website && bundle exec middleman"
 alias ember-guides="cd ~/Ember/guides && bundle exec middleman"
 alias cli-docs="cd ~/Ember/cli-docs && jekyll serve"
 alias middleman="open http://etuchscherermac.local:4567"
 
 # Git
+#---------------------------------------
 alias g="git status"
-alias gs="git status"
 alias gg="git checkout"
 alias gb="git branch"
 alias gl="git whatchanged"
 alias gd="git difftool -y"
+alias gdd="git log -p -1"
 alias gm="git mergetool -y"
 
 # Bundler
