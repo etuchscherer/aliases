@@ -5,8 +5,11 @@ A collection of aliases I frequently use.
 ## Installation
 
 ```
-# add this to .bashrc, or .zshrc
+# ensure local aliases are available
 [[ -f ~/.aliases ]] && source ~/.aliases.local
+
+# then get these aliases
+wget -O ~/.aliases.local https://raw.githubusercontent.com/etuchscherer/aliases/master/.aliases
 ```
 
 ```
