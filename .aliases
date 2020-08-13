@@ -1,7 +1,7 @@
 # https://github.com/etuchscherer/aliases/blob/master/readme.md
 
 # Unix
-alias ll="ls -al"
+alias ll="ls -alh"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
@@ -32,44 +32,12 @@ alias te="test_email | pbcopy"
 #Redis
 alias sr="redis-server /usr/local/etc/redis.conf"
 
-# Classmates siteui specific
-alias dustbunny="cd ~/Sites/dustbunny && git status && code . && npm start"
 alias llk="open http://links.local"
 alias tu="$CATALINA_HOME/bin/startup.sh" 
 alias tl="tail -f $CATALINA_HOME/logs/catalina.out"
 alias td="$CATALINA_HOME/bin/shutdown.sh"
 alias tbounce="td && tu"
 alias mvnci="mvn clean install"
-alias reg-reset="td && sleep 5 && rm -rf $TOMCAT_HOME/webapps/registration* && registration && mvnci && cp ~/Sites/canvas/registration/trunk/target/registration*.war $TOMCAT_HOME/webapps/registration.war && cd $TOMCAT_HOME/webapps"
-alias t-reset="td && cd ~/Sites/siteui/ && git pull && mvnci && cp ~/Sites/siteui/target/siteui*.war $CATALINA_HOME/webapps/siteui.war"
-alias places-reset="td && sleep 4 && rm -rf $TOMCAT_HOME/webapps/places* && cd ~/Sites/canvas/places && mvnci && cp ~/Sites/canvas/places/target/places*.war $TOMCAT_HOME/webapps/places.war"
-alias yearbooks-reset="td && sleep 4 && rm -rf $TOMCAT_HOME/webapps/yearbooks* && canvas && cd yearbooks && mvnci && cp ~/Sites/canvas/yearbooks/target/yearbooks*.war $TOMCAT_HOME/webapps/yearbooks.war"
-alias natom="cd $HOME/Sites/siteuicli && atom ."
-alias nn="cd $HOME/Sites/siteuicli"
-alias nnn="cd $HOME/Sites/siteuicli && npm run build:live"
-alias nnt="cd $HOME/Sites/siteuicli && ember test -s"
-alias canvas="cd $HOME/Sites/canvas"
-alias parentpom="cd $HOME/Sites/canvas/ParentPom"
-alias registration="cd $HOME/Sites/canvas/registration/trunk"
-alias pelican="cd $HOME/Sites/pelican"
-alias dustbunny="cd $HOME/Sites/dustbuny"
-alias nnc="cd $HOME/Sites/siteuicli && npm run cover"
-alias nncc="nnc && cd $HOME/Sites/siteuicli/coverage && php -S localhost:9000"
-alias ppp="cd $HOME/Sites/siteuicli && ember build -p -w"
-alias patom="cd ~/$HOME/Sites/site-node-api && atom ."
-alias vv="cd $HOME/Sites/site-node-api"
-alias vvv="cd $HOME/Sites/site-node-api && CM_ENV='local' npm run start:live"
-alias cc="cd /usr/local/etc/site-config"
-alias qanode="i2cssh -F -2 --cluster=qanode"
-
-alias refresh-tokens="ruby /usr/local/bin/refresh-tokens.rb"
-
-alias buildmaster="open http://buildmaster02.corp.sea1.cmates.com:8080/jenkins/"
-alias bitbucket="open http://bitbucket01.corp.sea1.cmates.com:7990/projects"
-alias bbc="open http://bitbucket01.corp.sea1.cmates.com:7990/projects/SITEUI/repos/siteuicli/browse"
-alias bbn="open http://bitbucket01.corp.sea1.cmates.com:7990/projects/SITEUI/repos/site-node-api/browse"
-alias whatson="open http://xfiles/display/Dept/Whatson"
-alias bamboo="http://bamboo01.corp.sea1.cmates.com:8085/allPlans.action"
 
 # Ember
 alias ember-api="cd ~/Ember/website && bundle exec middleman"
@@ -81,7 +49,6 @@ alias middleman="open http://etuchscherermac.local:4567"
 alias g="git status"
 alias gs="git status"
 alias gg="git checkout"
-alias gl="git gg"
 alias gb="git branch"
 alias gd="git difftool -y"
 alias gm="git mergetool -y"
@@ -105,15 +72,3 @@ alias npmbom="nombom"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
-
-# ssh
-alias qa09='ssh HOME-APP01.QA09.SEA1.CMATES.COM'
-alias node01='ssh canvas-http02.qa09.sea1.cmates.com'
-
-alias prod01='ssh canvas-http01.prod.iad1.cmates.com'
-alias prod02='ssh canvas-http02.prod.iad1.cmates.com'
-alias nvm01="ssh -i ~/.ssh/no_pass alexander.deakin@nvm-qa01.tuk2.intelius.com"
-
-# Intelius
-alias inn='ssh -A -l etuchscherer svm-etuchscherer1.tuk2.intelius.com'
-alias pma='open https://sqladmin.tuk2.intelius.com/sqladmin/'
