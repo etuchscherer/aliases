@@ -13,64 +13,73 @@ wget -O ~/.aliases.local https://raw.githubusercontent.com/etuchscherer/aliases/
 ```
 
 ```
-# Unix
-#---------------------------------------
+# https://github.com/etuchscherer/aliases/blob/master/readme.md
 
-# Long list [ll]
-alias ll="ls -al"
+# Unix
+alias ll="ls -alh"
 alias ln="ln -v"
-# always make the directory -p is for chumps
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
+alias src="source ~/.zshrc"
+alias ali="vi ~/.aliases.local"
+alias aliases="cat ~/.alias/.aliases"
+alias nlc="npm-link-check"
+alias nlk="nlc"
+# yarn links
+alias nly="ls -l node_modules"
+alias tmof="sudo lsof -n | cut -f1 -d' ' | uniq -c | sort | tail"
+
+# awk shortcuts
+alias c1="awk '{printf \$1}'"
+alias c2="awk '{printf \$2}'"
+alias c3="awk '{printf \$3}'"
+alias c4="awk '{printf \$4}'"
+alias c5="awk '{printf \$5}'"
+alias c6="awk '{printf \$6}'"
+alias c7="awk '{printf \$7}'"
+alias c8="awk '{printf \$8}'"
+alias c9="awk '{printf \$9}'"
+
+# Testing
+alias te="test_email | pbcopy"
 
 #Redis
-#---------------------------------------
-# Start Redis [sr]
 alias sr="redis-server /usr/local/etc/redis.conf"
 
-# Classmates siteui specific
-#---------------------------------------
-alias llk="cd $HOME/links && roots watch"
-# TU / TOMCAT UP - is now a script running in /usr/local/bin
-# alias tu="$CATALINA_HOME/bin/startup.sh && open http://localhost:8080"
+alias llk="open http://links.local"
+alias tu="$CATALINA_HOME/bin/startup.sh" 
 alias tl="tail -f $CATALINA_HOME/logs/catalina.out"
 alias td="$CATALINA_HOME/bin/shutdown.sh"
 alias tbounce="td && tu"
-alias t-reset="kt && cd ~/Sites/siteui/ && git pull && mvn clean install && cp ~/Sites/siteui/target/siteui*.war $CATALINA_HOME/webapps/siteui.war"
-alias natom="cd $HOME/Sites/siteuicli && atom ."
-alias nn="cd $HOME/Sites/siteuicli"
-alias nnn="cd $HOME/Sites/siteuicli && ember build --w"
-alias ppp="cd $HOME/Sites/siteuicli && ember build -p -w"
-alias patom="cd ~/$HOME/Sites/site-node-api && atom ."
-alias vv="cd $HOME/Sites/site-node-api"
-alias vvv="refresh_node_api"
-alias cc="cd /usr/local/etc/site-config"
-alias qanode="i2cssh -F -2 --cluster=qanode"
+alias mvnci="mvn clean install"
 
-# Local Ember Docs
-#---------------------------------------
+# Ember
 alias ember-api="cd ~/Ember/website && bundle exec middleman"
 alias ember-guides="cd ~/Ember/guides && bundle exec middleman"
 alias cli-docs="cd ~/Ember/cli-docs && jekyll serve"
 alias middleman="open http://etuchscherermac.local:4567"
 
 # Git
-#---------------------------------------
 alias g="git status"
+alias gs="git status"
 alias gg="git checkout"
 alias gb="git branch"
-alias gl="git whatchanged"
 alias gd="git difftool -y"
-alias gdd="git log -p -1"
 alias gm="git mergetool -y"
+alias gw="git whatchanged"
+alias gdd="git log -p -1"
+alias gam="git commit --amend"
+
+#svn
+alias s="svn status"
+alias si="svn info"
 
 # Bundler
 alias b="bundle"
 
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias s="rspec"
 
 # Node
 alias nombom="rm -rf node_modules bower_components && npm cache clean && bower cache clean && npm install && bower install" 
@@ -78,11 +87,4 @@ alias npmbom="nombom"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
-
-# Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
-
-# ssh
-alias qa09='ssh HOME-APP01.QA09.SEA1.CMATES.COM'
-alias node01='ssh nodejs01.qa09.sea1.cmates.com'
-alias node02='ssh nodejs02.qa09.sea1.cmates.com'
+```
